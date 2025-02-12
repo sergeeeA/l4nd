@@ -1,0 +1,528 @@
+/* Load Custom Font */
+@font-face {
+    font-family: 'Astrolab';
+    src: url('fonts/Astrolab.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+/* Header Logo */
+.header-logo {
+  width: 5vh; /* Adjust the size as needed */
+  height: 5vh; /* Adjust the size as needed */
+  margin-right: 10px; /* Add spacing between the logo and text */
+}
+
+  /* Sticky Header */
+.sticky-header {
+    min-height: 5vh;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    text-align: left;
+    font-size: 2.5vh;
+    font-weight: bold;
+    z-index: 100; /* Ensure it stays above other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  }
+  .headercontent{
+    color: #ffcf4c;
+    cursor: pointer;
+    font-size: 1.5vh;
+
+    flex-wrap: wrap; /* Allow cards to wrap to the next line on smaller screens */
+
+  }
+  
+  /* Apply Custom Font to the Entire Website */
+  body {
+    margin: 0;
+    font-family: 'Astrolab', Arial, sans-serif;
+    background-color: #0089f9;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffcf4c;
+    text-align: center;
+    
+  }
+  .wrapper {
+    display: flex; /* Align items in a row */
+    justify-content: space-evenly; /* Distribute items with equal space between */
+    align-items: center; /* Vertically center the items */
+  }
+  .image-container {
+    margin: 5px; /* Adds space between the image and the text */
+    user-select: none;
+    pointer-events: none; /* Ensure it doesn't block interactions */
+  }
+  .disclaimer{
+    font-size: 8px;
+    color: #414141;
+  }
+
+ /* Info Container */
+ /* Wrapper for info containers */
+.wrapperi {
+  display: flex;
+  justify-content: center; /* Center containers horizontally */
+  align-items: center; /* Center containers vertically */
+  margin: 20px 0;
+  height: 400px; /* Adjust height as needed */
+  position: relative; /* Needed for overlapping containers */
+}
+
+/* Info Container */
+.infocontainer {
+  background-color: #00000021;
+  backdrop-filter: blur(7px);
+  padding: 5px;
+  border-radius: 5px;
+  min-height: 355px;
+  width: 250px;
+  border: 1px solid #ffcf4c;
+  transition: transform 0.5s ease, background-color 0.25s ease-in-out;
+  position: absolute; /* Position containers absolutely for overlapping */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for exact centering */
+  
+}
+
+/* Move containers apart when the wrapper is hovered */
+.wrapperi:hover .infocontainer:nth-child(1) {
+  transform: translate(-130%, -50%) rotate(-10deg); /* Move left */
+}
+
+.wrapperi:hover .infocontainer:nth-child(2) {
+  transform: translate(-50%, -60%); /* Stay in the center */
+}
+
+.wrapperi:hover .infocontainer:nth-child(3) {
+  transform: translate(40%, -50%) rotate(10deg); /* Move right */
+}
+
+/* Hover effect for individual containers */
+.infocontainer:hover {
+  background-color: #00000071;
+  transform: translate(0%) rotate(0deg); /* Move left */
+  z-index: 1;
+}
+  /* Animation for Dropdown */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Flip Cards */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    gap: 20px;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line on smaller screens */
+    padding: 5px; /* Add padding to prevent cards from touching the edges */
+  }
+ 
+  .Title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line on smaller screens */
+    padding: 5px; /* Add padding to prevent cards from touching the edges */
+  }
+  .Paragraph {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line on smaller screens */
+    padding: 5px; /* Add padding to prevent cards from touching the edges */
+  }
+  .bullet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line on smaller screens */
+    padding: 5px; 
+    line-height: 2;
+  }
+  .flip-card {
+    width: 150px;
+    height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+    margin: 10px; /* Add margin for spacing */
+  }
+  
+  .flip-card-inner {
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+  
+  /* Front Side with Background Images */
+  .flip-card-front {
+    
+ 
+    background-color: #f01a1a17;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.15s ease;
+  }
+
+ .flip-card-front:hover {
+    opacity: 0;
+}
+
+  /* Individual Background Images for Each Card */
+    .flip-card:nth-child(1) .flip-card-front {
+      background-image: url('images/berachain.png');
+
+      background-size: 75%; /* Ensure the image covers the entire div */
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Prevent the image from repeating */ /* Replace with your image path */
+    
+    }
+       
+    
+    .flip-card:nth-child(2) .flip-card-front {
+        background-image: url('https://via.placeholder.com/150x250?text=Card+2');
+    }
+    
+    .flip-card:nth-child(3) .flip-card-front {
+        background-image: url('https://via.placeholder.com/150x250?text=Card+3');
+    }
+  
+  /* Back Side */
+  .flip-card-back {
+    font-size: 10px;
+    overflow-wrap: break-word;
+    transform: rotateY(180deg);
+  }
+
+.background-overlay {
+    position: fixed; /* Fixed position to stay in place while scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #804902;
+
+    z-index: -1; /* Place it behind everything */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease; /* Smooth fade effect */
+    pointer-events: none; /* Ensure it doesn't block interactions */
+  }
+  
+  /* Show the overlay on hover */
+  .show-overlay {
+    opacity: 1; /* Make it visible */
+    z-index: -1; /* Keep it behind everything */
+  }
+  .background-overlayG {
+    position: fixed; /* Fixed position to stay in place while scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4ac502;
+
+    z-index: -1; /* Place it behind everything */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease; /* Smooth fade effect */
+    pointer-events: none; /* Ensure it doesn't block interactions */
+  }
+  
+  /* Show the overlay on hover */
+  .show-overlayG {
+    opacity: 1; /* Make it visible */
+    z-index: -1; /* Keep it behind everything */
+  }
+  .background-overlayM {
+    position: fixed; /* Fixed position to stay in place while scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #a3a3a3;
+
+    z-index: -1; /* Place it behind everything */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease; /* Smooth fade effect */
+    pointer-events: none; /* Ensure it doesn't block interactions */
+  }
+  
+  /* Show the overlay on hover */
+  .show-overlayM {
+    opacity: 1; /* Make it visible */
+    z-index: -1; /* Keep it behind everything */
+  }
+  
+/* Mini-Game Container */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 35px;
+  /* Initial position off-screen (below the container) */
+
+
+}
+
+/* Hover state */
+.game-container:hover {
+  animation: slideUp 0.15s ease-in-out forwards;
+}
+
+/* Not hover state */
+.game-container:not(:hover) {
+  animation: slideDown 0.15s ease-in-out forwards;
+}
+
+/* Keyframes for slide-up animation */
+@keyframes slideUp {
+  0% {
+      transform: translateY(5%); /* Start off-screen */
+  }
+  100% {
+      transform: translateY(0%); /* End at normal position */
+  }
+}
+
+/* Keyframes for slide-down animation */
+@keyframes slideDown {
+  0% {
+      transform: translateY(0%); /* Start at normal position */
+  }
+  100% {
+      transform: translateY(5%); /* Move down further off-screen */
+  }
+}
+
+  .styledcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #00000021;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #ffcf4c ;
+  }
+  
+  /* Balances */
+  .balances {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  
+  .balances p {
+    margin: 5px 0;
+  }
+  
+  /* Click Box */
+  .click-box {
+    width: 150px;
+    height: 150px;
+    background-color: #333;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.733); /* Add a subtle shadow */
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffcf4c;
+    font-size: 20px;
+    user-select: none; 
+    transition: transform 0.1s ease, background-color 0.25s ease;
+  }
+
+  
+  .click-box:active {
+    transform: scale(0.95); /* Shrink the box when clicked */
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.733); /* Add a subtle shadow */
+  }
+  
+  /* Counters */
+  .counters {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  .counters p {
+    margin: 5px 0;
+  }
+  
+  /* Actions (Sell/Buy Buttons) */
+  .actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .actions button {
+    font-family: 'Astrolab', Arial, sans-serif;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #ffcf4c;
+    transition: background-color 0.25s ease;
+  }
+  
+  .actions button:hover, .click-box:hover {
+    background-color: #ffee00;
+    color: #0089f9;
+  }
+  
+  .actions button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+  }
+  
+/* Leaderboard */
+.leaderboard {
+    margin-top: 40px;
+    color: #ffcf4c;
+    max-width: 400px;
+    background-color: #00000021;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .leaderboard h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 12px;
+  }
+  
+  .leaderboard table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8px;
+  }
+  
+  .leaderboard th, .leaderboard td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .leaderboard th {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .leaderboard tr:hover {
+    background-color: #f5f5f596;
+  }
+
+  /*SHARE ON X*/
+
+  /* Share on X Component */
+  .share-container {
+    display: none; /* Hidden by default */
+    margin-top: 20px;
+    padding: 20px;
+
+    border-radius: 10px;
+
+    text-align: center;
+  }
+  
+  .share-container h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+  
+  .share-container p {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
+  .tweet-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #1da1f2; /* Twitter/X blue */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tweet-button:hover {
+    background-color: #1991db;
+  }
+
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column; /* Stack cards vertically */
+      height: auto; /* Allow container to grow with content */
+      padding: 20px 10px; /* Adjust padding for smaller screens */
+    }
+    .flip-card:nth-child(1) .flip-card-front {
+      background-size: 50%;
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Prevent the image from repeating */ /* Replace with your image path */
+    /* Optional: to center the image */
+    }
+
+    .flip-card {
+      width: 50%; /* Make cards wider on smaller screens */
+      height: 200px; /* Adjust height for smaller screens */
+      margin: 10px 0; /* Add vertical spacing between cards */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .flip-card {
+        width: 75%; /* Make cards wider on smaller screens */
+        height: 75px; /* Adjust height for smaller screens */
+        margin: 10px 0; /* Add vertical spacing between cards */
+    }
+  }
+
+  

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Berashowdown</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Background Image Overlay -->
+  <div class="background-overlay" id="backgroundOverlay"></div>
+  <div class="background-overlayG" id="backgroundOverlayG"></div>
+  <div class="background-overlayM" id="backgroundOverlayM"></div>
+  <!-- Sticky Header -->
+  <div class="sticky-header">
+    <img src="logo.png" alt="BERASHOWDOWN Logo" class="header-logo">
+    BERASHOWDOWN
+    <a class="headercontent" onclick="window.open('https://bera-tec.gitbook.io/berashowdown', '_blank');">
+      Docs
+    </a>
+  </div>
+
+  <div class="Title">
+    CHAINS
+  </div>
+
+  <!-- Flip Cards Container -->
+  <div class="container">
+
+
+    <div class="flip-card" onmouseover="showBackground()" onmouseout="hideBackground()">
+      <div class="flip-card-inner">
+        <div class="flip-card-front" >
+          BERACHAIN
+        </div>
+        <div class="flip-card-back" style="background-color: #b96c06;" onclick="window.open('https://www.beraduel.xyz/', '_blank');">
+          BERA, DUEL!
+          beraduel.xyz
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" onmouseover="showBackgroundG()" onmouseout="hideBackgroundG()">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          ABSTRACT
+        </div>
+        <div class="flip-card-back" style="background-color: #5eff00;">
+          Soon...
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" onmouseover="showBackgroundM()" onmouseout="hideBackgroundM()">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          MEGAETH
+        </div>
+        <div class="flip-card-back" style="background-color: #9e9e9e;">
+          Soon...
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="Title">
+    BERASHOWDOWN IS AN NFT DUELLING PLATFORM
+  </div>
+
+  <div class="Paragraph">
+    Bringing utility to NFTs
+  </div>
+ 
+  <div class="wrapperi">
+
+    <div class="infocontainer">
+      <div class="bullet">
+        <div class="image-container">
+          <img src="images/coinflip.png" style="max-width: 175px; border-radius: 10px; margin-top: 15px;">
+        </div>
+        We introduce a fair odds system where both the challenger and the creator have a 50% chance of winning.
+        similar to a coinflip!
+      </div>
+    </div>
+
+  
+
+
+    <div class="infocontainer">
+      <div class="bullet">
+        <div class="image-container">
+          <img src="images/rug.png" style="max-width: 175px; border-radius: 10px; margin-top: 15px;">
+        </div>
+        Any NFTs can be wagered, whether it's an NFT that soft rugged you, an NFT with little monetary value, and more!
+      </div>
+    </div>
+
+    <div class="infocontainer">
+      <div class="image-container">
+        <img src="images/aim.png" style="max-width: 175px; border-radius: 10px; margin-top: 15px;">
+      </div>
+      <div class="bullet">
+        BERASHOWDOWN offers wagers in which a user can create a duel or challenge a duel with any NFT.
+      </div>
+    </div>
+  
+  </div>
+
+  <div class="bullet">
+    Try it below!
+  </div>
+  <!-- Mini-Game Container -->
+  <div class="game-container">
+    <div class="styledcontainer">
+      <!-- Balances -->
+      <div class="balances">
+        <p>Balance: <span id="balance">6.9</span> $BERA <span id="pnl"></span></p>
+    
+
+        <p>NFT Balance: <span id="nftBalance">20</span></p>
+      </div>
+
+      <!-- Click Box -->
+      <div class="click-box" id="clickBox" title="">DUEL</div>
+
+      <script>
+          const codeSnippet = 'const isWin = Math.random() < 0.5;';
+          document.getElementById('clickBox').title = codeSnippet;
+      </script>
+      <!-- Counters -->
+      <div class="counters">
+        <p>Wins: <span id="wins">0</span></p>
+        <p>Losses: <span id="losses">0</span></p>
+        <p>Ratio: <span id="ratio">0</span></p>
+        <p>Attempts: <span id="attempts">0</span></p>
+      </div>
+
+      <!-- Sell and Buy Buttons -->
+      <div class="actions">
+        <button id="sellButton">Sell 1 NFT for 1 $BERA</button>
+        <button id="buyButton">Buy 1 NFT for 1 $BERA</button>
+      </div>
+
+      <!-- Leaderboard -->
+      <div class="leaderboard">
+        <h2>Leaderboard</h2>
+        <table id="leaderboardTable">
+          <thead>
+            <tr>
+              <th style="color: #ffcf4c;">Rank</th>
+              <th style="color: #ffcf4c;">Player</th>
+              <th style="color: #ffcf4c;">Ratio</th>
+              <th style="color: #ffcf4c;">Attempts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Leaderboard rows will be populated dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Share on X Component -->
+  <div class="share-container" id="shareContainer">
+    <h2>You defeated smonkey!</h2>
+    <p>Wins: <span id="shareWins">0</span></p>
+    <p>Losses: <span id="shareLosses">0</span></p>
+    <p>Ratio: <span id="shareRatio">0</span></p>
+    <p>Attempts: <span id="shareAttempts">0</span></p>
+    <a id="tweetLink" target="_blank" class="tweet-button">Share on X</a>
+  </div>
+  <div class="disclaimer">
+    Legal Disclaimer: By using Berashowdowns platform, 
+    you agree to our Terms and Conditions and
+    Privacy Policy, and acknowledge that participation
+      in NFT duels is at your own risk. NFTs are speculative and volatile, 
+      and we disclaim responsibility for any financial losses.
+      This platform complies with Australian Anti-Money Laundering (AML) 
+      regulations and is committed to preventing money laundering and the 
+      financing of terrorism.
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
