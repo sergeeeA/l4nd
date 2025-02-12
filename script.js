@@ -171,7 +171,7 @@ function showShareComponent() {
 
   // Update the tweet link
   const tweetText = `I just defeated Smonkey on @berashowdown! 🎮\n\nWins: ${wins}\nLosses: ${losses}\nRatio: ${(losses === 0 ? wins : (wins / losses).toFixed(2))}\nAttempts: ${attempts}
-  \nTry it out: linkhere`;
+  \nTry it out: berashowdown.xyz`;
   const encodedTweetText = encodeURIComponent(tweetText);
   tweetLink.href = `https://twitter.com/intent/tweet?text=${encodedTweetText}`;
 }
@@ -274,7 +274,7 @@ async function loadShareComponent() {
         shareContainer.style.display = "block";
       
         // Update the tweet link
-        const tweetText = `I just defeated Smokey on BERASHOWDOWN! 🎮\n\nWins: ${wins}\nLosses: ${losses}\nRatio: ${(losses === 0 ? wins : (wins / losses).toFixed(2))}\n\nTry it out: https://www.beraduel.xyz`;
+        const tweetText = `I just defeated Smokey on BERASHOWDOWN! 🎮\n\nWins: ${wins}\nLosses: ${losses}\nRatio: ${(losses === 0 ? wins : (wins / losses).toFixed(2))}\n\nTry it out: berashowdown.xyz`;
         const encodedTweetText = encodeURIComponent(tweetText);
         tweetLink.href = `https://twitter.com/intent/tweet?text=${encodedTweetText}`;
       }
