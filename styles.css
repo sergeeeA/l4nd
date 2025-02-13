@@ -20,7 +20,7 @@
     backdrop-filter: blur(5px);
     padding: 10px;
     text-align: left;
-    font-size: 2.5vh;
+    font-size: 2vh;
     font-weight: bold;
     z-index: 100; /* Ensure it stays above other content */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
@@ -28,7 +28,7 @@
   .headercontent{
     color: #ffcf4c;
     cursor: pointer;
-    font-size: 1.5vh;
+    font-size: 1vh;
 
     flex-wrap: wrap; /* Allow cards to wrap to the next line on smaller screens */
 
@@ -219,11 +219,11 @@
        
     
     .flip-card:nth-child(2) .flip-card-front {
-        background-image: url('https://via.placeholder.com/150x250?text=Card+2');
+     
     }
     
     .flip-card:nth-child(3) .flip-card-front {
-        background-image: url('https://via.placeholder.com/150x250?text=Card+3');
+    
     }
   
   /* Back Side */
@@ -522,6 +522,11 @@
         width: 75%; /* Make cards wider on smaller screens */
         height: 75px; /* Adjust height for smaller screens */
         margin: 10px 0; /* Add vertical spacing between cards */
+    }
+    .sticky-header {
+
+      font-size:0;
+
     }
   }
 
